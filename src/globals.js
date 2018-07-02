@@ -1,10 +1,10 @@
+export const isLocal = window.origin.includes("localhost");
+
 export const PRICE_VOLATILITY_BUFFER = 1.01;
 
-export const HYPERMASK_DEV_ADDRESS =
-  "0x658AC8Dab114EE16Fba37f3c18Ad734a3542bF63";
+export const HYPERMASK_DEV_ADDRESS = "0x658AC8Dab114EE16Fba37f3c18Ad734a3542bF63";
 
-export const WALLET_PASSWORD =
-  "Security through obscurity is my favorite type of insecurity.";
+export const WALLET_PASSWORD = "Security through obscurity is my favorite type of insecurity.";
 
 export const CHAINS = [
   {
@@ -58,10 +58,7 @@ export const ERC20ABI = [
   },
   {
     constant: false,
-    inputs: [
-      { name: "_spender", type: "address" },
-      { name: "_value", type: "uint256" }
-    ],
+    inputs: [{ name: "_spender", type: "address" }, { name: "_value", type: "uint256" }],
     name: "approve",
     outputs: [{ name: "success", type: "bool" }],
     type: "function"
@@ -114,10 +111,7 @@ export const ERC20ABI = [
   },
   {
     constant: false,
-    inputs: [
-      { name: "_to", type: "address" },
-      { name: "_value", type: "uint256" }
-    ],
+    inputs: [{ name: "_to", type: "address" }, { name: "_value", type: "uint256" }],
     name: "transfer",
     outputs: [{ name: "success", type: "bool" }],
     type: "function"
@@ -135,10 +129,7 @@ export const ERC20ABI = [
   },
   {
     constant: true,
-    inputs: [
-      { name: "_owner", type: "address" },
-      { name: "_spender", type: "address" }
-    ],
+    inputs: [{ name: "_owner", type: "address" }, { name: "_spender", type: "address" }],
     name: "allowance",
     outputs: [{ name: "remaining", type: "uint256" }],
     type: "function"

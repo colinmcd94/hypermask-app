@@ -4,10 +4,10 @@ import * as util from "./util";
 import * as queueutil from "./queueutil";
 import * as gautil from "./gautil";
 
-import * as rpc from "../rpc";
+import rpcCall from "../rpc/call";
 
-async function show() {
-  await rpc.call(
+export async function show() {
+  await rpcCall(
     "insertStylesheet",
     `
         @keyframes hypermask-entrance-animation {
@@ -34,7 +34,7 @@ async function show() {
         }
     `
   );
-  await rpc.call(
+  await rpcCall(
     "setStyle",
     `
         position: fixed;
@@ -61,7 +61,7 @@ async function show() {
 
 export async function closeModal() {
   let unlock = app.state.mutex.lock();
-  await rpc.call("closeModal");
+  await rpcCall("closeModal");
   app.setState({ page: "blank" });
   unlock();
 }

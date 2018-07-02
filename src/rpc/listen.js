@@ -1,8 +1,8 @@
 import * as methods from "./methods";
+import handlers from "./handlers";
 
-export const handlers = {};
-
-export function listen() {
+export default listen;
+function listen() {
   window.addEventListener(
     "message",
     function(event) {
@@ -55,10 +55,12 @@ export function listen() {
           });
       } else if (event.data.app === "hypermask-reply" && app.state.query.origin === event.origin) {
         let data = event.data;
-        console.log("Handlers");
-        console.log(JSON.stringify(Object.keys(handlers), null, 2));
+
+        // console.log("Handlers");
+        // console.log(JSON.stringify(Object.keys(handlers), null, 2));
         if (data.id in handlers) {
           let { resolve, reject, method } = handlers[data.id];
+          console.log("Received reply: " + method);
           if (data.error) {
             reject(data.error);
           } else {
@@ -75,15 +77,20 @@ export function listen() {
 }
 
 function handlePaymentFrameEvent(e) {
+  if (!app.state.flow) {
+    console.log("No active flow.");
+    return;
+  }
+
+  console.log("Handling payment frame event...");
   if (e.data.event === "modal_closed") {
-    if (app.state.fail) {
-      app.state.fail("Transaction cancelled from payment frame");
-    }
+    console.log("Failing payment frame");
+    app.state.flow.fail("Transaction cancelled from payment frame");
   } else if (e.data.event === "buy_completed") {
-    app.state.next();
+    console.log("Successful buy...proceeding.");
+    app.state.flow.proceed();
   } else if (e.data.event === "buy_canceled") {
-    if (app.state.fail) {
-      app.state.fail("Transaction cancelled from payment frame");
-    }
+    console.log("Buy cancelled...failing.");
+    app.state.flow.fail("Transaction cancelled from payment frame");
   }
 }

@@ -9,8 +9,10 @@ import Dashboard, { updateDashboard } from "./components/Dashboard";
 import Widget from "./components/Widget";
 
 import * as mutexutil from "./util/mutexutil";
-import * as rpc from "./rpc/index";
 import * as util from "./util/util";
+
+import rpcRelayProvider from "./rpc/relay";
+import rpcListen from "./rpc/listen";
 
 import "./style.scss";
 
@@ -22,7 +24,7 @@ class App extends React.Component {
 
     const query = queryString.parse(location.search);
     var chain = util.findChain(query.chain || "mainnet");
-    let provider = query.channel ? rpc.relayProvider : new Web3.providers.HttpProvider(chain.rpc);
+    let provider = query.channel ? rpcRelayProvider : new Web3.providers.HttpProvider(chain.rpc);
     global.web3 = new Web3(provider);
 
     console.log("AppQuery");
@@ -35,7 +37,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    rpc.listen();
+    rpcListen();
     if (window.parent === window) {
       updateDashboard();
     }

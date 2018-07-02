@@ -1,10 +1,10 @@
 html {
-  background: #BB6BD9; }
+  background: #bb6bd9; }
 
 body {
   font-family: Avenir;
   margin: 0;
-  background: radial-gradient(773.46px at 17.43% 24.02%, #9B51E0 0%, #BB6BD9 100%); }
+  background: radial-gradient(773.46px at 17.43% 24.02%, #9b51e0 0%, #bb6bd9 100%); }
 
 .hypermask-logo line {
   stroke-width: 2;
@@ -36,10 +36,10 @@ body {
   transition: stroke 5s linear; }
 
 .body.spinner.wait-pending text {
-  fill: #AA6A2A; }
+  fill: #aa6a2a; }
 
 .body.spinner.wait-pending line {
-  stroke: #AA6A2A;
+  stroke: #aa6a2a;
   opacity: 0.4; }
 
 .body.spinner.wait-latest text {
@@ -50,14 +50,14 @@ body {
   opacity: 0.4; }
 
 .body.spinner.spinner-finish line {
-  stroke: #BB6BD9;
+  stroke: #bb6bd9;
   opacity: 0.4; }
 
 body.dashboard {
-  background: radial-gradient(773.46px at 17.43% 24.02%, #9B51E0 0%, #BB6BD9 100%);
+  background: radial-gradient(773.46px at 17.43% 24.02%, #9b51e0 0%, #bb6bd9 100%);
   margin-bottom: 100px; }
   body.dashboard.testnet {
-    background: radial-gradient(773.46px at 17.43% 24.02%, #ff8100 0%, #BB6BD9 100%); }
+    background: radial-gradient(773.46px at 17.43% 24.02%, #ff8100 0%, #bb6bd9 100%); }
   body.dashboard .header {
     text-align: center;
     color: white;
@@ -65,7 +65,7 @@ body.dashboard {
     padding-bottom: 100px;
     padding-top: 20px; }
     body.dashboard .header h1 {
-      margin-top: -200px; }
+      margin-top: -230px; }
     body.dashboard .header h2 {
       font-size: 30px;
       text-transform: uppercase;
@@ -78,7 +78,7 @@ body.dashboard {
         stroke-width: 1; }
   body.dashboard .block {
     word-wrap: break-word;
-    background: #953FB5;
+    background: #953fb5;
     box-shadow: 0px 2px 24px rgba(255, 255, 255, 0.1);
     padding: 50px;
     max-width: 800px;
@@ -129,7 +129,7 @@ pre {
     text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     opacity: 0.7; }
   #app .header {
-    background: radial-gradient(267.65px at 18.56% 31.18%, #9B51E0 0%, #BB6BD9 100%);
+    background: radial-gradient(267.65px at 18.56% 31.18%, #9b51e0 0%, #bb6bd9 100%);
     overflow: auto;
     color: white;
     padding: 5px 30px;
@@ -148,19 +148,19 @@ pre {
       cursor: pointer; }
     #app .footer .cancel {
       text-align: left;
-      color: #EB5757; }
+      color: #eb5757; }
     #app .footer .loading {
       color: #888;
       text-align: right;
       cursor: default; }
     #app .footer .continue {
       text-align: right;
-      color: #2F80ED; }
+      color: #2f80ed; }
       #app .footer .continue svg {
         vertical-align: middle;
         opacity: 0.7; }
     #app .footer .confirm {
-      color: #27AE60;
+      color: #27ae60;
       text-align: right; }
       #app .footer .confirm svg {
         opacity: 0.7; }

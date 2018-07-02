@@ -65,7 +65,7 @@ function Dashboard() {
         </div>
 
         <div className="caveat">
-          HyperMask maintains a local Ethereum wallet in your browser— its private keys never leave
+          HyperMask maintains a local Ethereum wallet in your browser—its private keys never leave
           your computer. Funds are briefly sent from Coinbase to your HyperMask wallet, after which
           the funds are immediately spent on the requested transaction. Value may be left over in
           your HyperMask wallet due to changes in Ethereum's price during the purchase process, if a

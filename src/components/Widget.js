@@ -100,12 +100,15 @@ function Widget(props) {
           <div
             className="button cancel"
             style={{ flex: 1 }}
-            onClick={e => state.fail("Transaction cancelled by user")}
+            onClick={e => state.flow && state.flow.fail("Transaction cancelled by user")}
           >
             {abort}
           </div>
 
-          <div style={{ position: "relative", width: 200, flex: 1 }} onClick={e => state.next()}>
+          <div
+            style={{ position: "relative", width: 200, flex: 1 }}
+            onClick={e => state.flow.proceed()}
+          >
             <CSSTransitionGroup
               transitionName="fade"
               transitionEnter={true}
